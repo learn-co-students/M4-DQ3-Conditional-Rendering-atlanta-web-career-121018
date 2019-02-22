@@ -1,7 +1,7 @@
 import React from 'react'
+import { Profile, Photos, Cocktails, Pokemon} from './Pages.js'
 
 const MenuBar = (props) => {
-
   /*
 
   The 'a' tags below are the menu items. Think about the way a menu 
@@ -16,19 +16,19 @@ const MenuBar = (props) => {
   return (
     <div className="ui four item menu">
       <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
+        <i className="user large icon" id="profile" onClick={props.handleClick}/>
       </a>
 
       <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+        <i className="photo large icon" id="photo" onClick={props.handleClick}/>
       </a>
 
       <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+        <i className="cocktail large icon" id="cocktail" onClick={props.handleClick}/>
       </a>
 
       <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+        <i className=" themeisle large icon" id="pokemon" onClick={props.handleClick}/>
       </a>
     </div>
   )

@@ -4,6 +4,36 @@ import { Profile, Photos, Cocktails, Pokemon} from '../components/Pages.js'
 
 class MainBox extends React.Component {
 
+   constructor() {
+      super() 
+
+      this.state = {
+         page: <Profile />
+      }
+   }
+
+   handleClick = (event) => {
+      console.log(event.target.id)
+      let newPage
+      switch (event.target.id) {
+         case 'profile':
+            newPage = <Profile />
+            break;
+         case 'photo':
+            console.log('hi')
+            newPage = <Photos />
+            break;
+         case 'cocktail':
+            newPage = <Cocktails />
+            break;
+         case 'pokemon':
+            newPage = <Pokemon />
+            break;
+         } 
+      this.setState = ({
+         page: newPage
+      }, () => console.log(this.state.page))
+   }
 
   render() {
 
@@ -13,15 +43,17 @@ class MainBox extends React.Component {
 
     */
 
-    const detailsToDisplay = <div>Hi, I'm a div!</div>
 
-    return (
+
+   const detailsToDisplay = <div>{this.state.page}</div>
+
+   return (
       <div>
-        <MenuBar />
+        <MenuBar handleClick={this.handleClick} />
         {detailsToDisplay}
       </div>
-    )
-  }
+   )
+   }
 
 }
 
